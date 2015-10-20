@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; ">
+<title>mTab : Responsive Tabbing with Accordion in mobile view</title>
+<link href="css/mTab-style.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+<h1>jQuery Responsive Tabs</h1>
+<p> This jQuery plugin provides responsive tab functionality. The tabs transform to an accordion when it reaches a CSS breakpoint.</p>
+<ul>
+  <li>Tabs transform to accordion based on breakpoint</li>
+  <li>Uses CSS for tab switching animation (true/false)</li>
+  <li>Uses CSS for the desktop/tablet/mobile view</li>
+  <li>Has callback events for the tab events</li>
+  <li>Accordion are collapsible</li>
+  <li>Set custom active class</li>
+  <li>Set default active/open tab</li>
+  <li>Tabs can be opened with URL hashes</li>
+  <li>Tabs can auto rotate</li>
+  <li>Accordion will scroll to respective click scroll top position</li>
+  <li>Tabs can be collapsed (optional)</li>
+  <li>Tabs can start collapsed based on the view (optional)</li>
+  <li>Cross browser compatibility (IE7+, Chrome, Firefox, Safari and Opera)</li>
+  <li>Multiple device support (Web, Tablet, Mobile, etc)</li>
+</ul>
+<h2>How to use</h2>
+<ul>
+  <li>Requires jQuery (minimaly jQuery 1.9.2)</li>
+  <li>Include jquery-mTab-min.js</li>
+</ul>
+<p>
+<pre>&lt;script src="js/jquery-mTab-min.js"&gt;&lt;/script&gt;</pre>
+</p>
+<p><strong>Include mTab-style.css for the basic Tabs to Accordion switching</strong></p>
+<p>
+<pre>&lt;link type="text/css" rel="stylesheet" href="css/mTab-style.css" /&gt;
+</pre>
+</p>
+<p> <strong>Use this HTML markup:</strong></p>
+<p>
+<pre>
+&lt;div class="sectionTabbing"&gt;
+    &lt;ul class="tabNav"&gt;
+        &lt;li&gt;&lt;a href="#tab1"&gt; .... &lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#tab2"&gt; .... &lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#tab3"&gt; .... &lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+        &lt;div class="tabContainer"&gt;
+        &lt;div class="tabContent" id="tab1"&gt; ....... &lt;/div&gt;
+        &lt;div class="tabContent" id="tab2"&gt; ....... &lt;/div&gt;
+        &lt;div class="tabContent" id="tab3"&gt; ....... &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+</p>
+<p> Use this jQuery function to enable responsive tabs on the selected element:</p>
+<p>
+<pre> // Default Setting
+$('.sectionTabbing').mTab({
+     navigation: ".tabNav"
+    ,container: ".tabContainer",
+    ,activeTab: 1
+    ,activeClass: "active" 
+    ,scrollOffset: true
+    ,accordScreen: 768
+    ,animation: 700
+    ,toggleClose: false
+    ,openWithUrl: false
+    ,callbackonclick: function() {}
+     callback: function() {} 
+});
+</pre>
+</p>
+<br />
+<br />
+<div class="sectionTabbing">
+  <ul class="tabNav">
+    <li><a href="#tab1">tab 1</a></li>
+    <li><a href="#tab2">tab 2</a></li>
+    <li><a href="#tab3">tab 3</a></li>
+    <li><a href="#tab4">tab 4</a></li>
+  </ul>
+  <div class="tabContainer">
+    <div class="tabContent" id="tab1">
+      <h3>Tab Content 1</h3>
+      <p>Lorem ipsum dolor sit amet, prompta molestie ad eam, ea commodo voluptaria referrentur pri, dicant consul est et. Corpora detraxit inciderint eam no, nonumy denique his id. Utroque percipit accusata usu eu, eu choro offendit consetetur nec. Cum at purto timeam cotidieque.</p>
+      <p>At sit modus posse porro, duis doming interesset id pro. Vis vero ignota cetero ex, mentitum vituperatoribus quo id, eam eu modo sententiae. Cu iudico rationibus eum, ne duo elit nostrum constituam. Mea ea atqui minim. Eros primis persius eu sed. Usu cu aperiri utroque. An per voluptua phaedrum percipitur, ne ius scribentur dissentiunt. Lobortis principes est te, inermis placerat hendrerit mea ne, duo dicat nonumy sententiae an. An mel eius noster, dolore vituperata efficiendi pro at. Electram incorrupte mea at, percipit torquatos instructior sed eu, unum dolores ne vel. Id has tacimates intellegam, putent recusabo corrumpit nam ea.</p>
+    </div>
+    <div class="tabContent" id="tab2">
+      <h3>Tab Content 2</h3>
+      <p>At sit modus posse porro, duis doming interesset id pro. Vis vero ignota cetero ex, mentitum vituperatoribus quo id, eam eu modo sententiae. Cu iudico rationibus eum, ne duo elit nostrum constituam. Mea ea atqui minim. Eros primis persius eu sed. Usu cu aperiri utroque. An per voluptua phaedrum percipitur, ne ius scribentur dissentiunt. Lobortis principes est te, inermis placerat hendrerit mea ne, duo dicat nonumy sententiae an. An mel eius noster, dolore vituperata efficiendi pro at.</p>
+      <p>Lorem ipsum dolor sit amet, prompta molestie ad eam, ea commodo voluptaria referrentur pri, dicant consul est et. Corpora detraxit inciderint eam no, nonumy denique his id. Utroque percipit accusata usu eu, eu choro offendit consetetur nec. Cum at purto timeam cotidieque.</p>
+    </div>
+    <div class="tabContent" id="tab3">
+      <h3>Tab Content 3</h3>
+      <p>Lorem ipsum dolor sit amet, prompta molestie ad eam, ea commodo voluptaria referrentur pri, dicant consul est et. Corpora detraxit inciderint eam no, nonumy denique his id. Utroque percipit accusata usu eu, eu choro offendit consetetur nec. Cum at purto timeam cotidieque.</p>
+      <p>Ea oblique ceteros vix, ex quo paulo labore maiorum, falli detraxit ad pri. Ex sea populo tacimates definitionem, et mel sale erant, has ad probatus adipiscing. Mea cibo sententiae cotidieque ea. In viris quodsi lucilius vim, purto rebum graeco sea ad. In cum reque suscipit, moderatius philosophia sed ut. Denique platonem scribentur sed no, est natum electram abhorreant ei. Vis et possim quaerendum, sed primis nominavi ad. Nec munere lucilius ea, vel in latine erroribus, ius te porro regione. Te sed tollit tamquam invenire. Ad quo nihil virtute ancillae, pri ad idque singulis, iuvaret molestie dissentias ut cum.</p>
+    </div>
+    <div class="tabContent" id="tab4">
+      <h3>Tab Content 4</h3>
+      <p>Ea oblique ceteros vix, ex quo paulo labore maiorum, falli detraxit ad pri. Ex sea populo tacimates definitionem, et mel sale erant, has ad probatus adipiscing. Mea cibo sententiae cotidieque ea. In viris quodsi lucilius vim, purto rebum graeco sea ad.</p>
+      <p> In cum reque suscipit, moderatius philosophia sed ut. Denique platonem scribentur sed no, est natum electram abhorreant ei. Vis et possim quaerendum, sed primis nominavi ad. Nec munere lucilius ea, vel in latine erroribus, ius te porro regione. Te sed tollit tamquam invenire. Ad quo nihil virtute ancillae, pri ad idque singulis, iuvaret molestie dissentias ut cum.</p>
+    </div>
+  </div>
+</div>
+<br />
+<br />
+<p>Lorem ipsum dolor sit amet, prompta molestie ad eam, ea commodo voluptaria referrentur pri, dicant consul est et. Corpora detraxit inciderint eam no, nonumy denique his id. Utroque percipit accusata usu eu, eu choro offendit consetetur nec. Cum at purto timeam cotidieque. <br />
+  <br />
+  At sit modus posse porro, duis doming interesset id pro. Vis vero ignota cetero ex, mentitum vituperatoribus quo id, eam eu modo sententiae. Cu iudico rationibus eum, ne duo elit nostrum constituam. Mea ea atqui minim. <br />
+  <br />
+  Eros primis persius eu sed. Usu cu aperiri utroque. An per voluptua phaedrum percipitur, ne ius scribentur dissentiunt. Lobortis principes est te, inermis placerat hendrerit mea ne, duo dicat nonumy sententiae an. An mel eius noster, dolore vituperata efficiendi pro at. Electram incorrupte mea at, percipit torquatos instructior sed eu, unum dolores ne vel. Id has tacimates intellegam, putent recusabo corrumpit nam ea. <br />
+  <br />
+  Ea oblique ceteros vix, ex quo paulo labore maiorum, falli detraxit ad pri. Ex sea populo tacimates definitionem, et mel sale erant, has ad probatus adipiscing. Mea cibo sententiae cotidieque ea. In viris quodsi lucilius vim, purto rebum graeco sea ad. <br />
+  <br />
+  In cum reque suscipit, moderatius philosophia sed ut. Denique platonem scribentur sed no, est natum electram abhorreant ei. Vis et possim quaerendum, sed primis nominavi ad. Nec munere lucilius ea, vel in latine erroribus, ius te porro regione. Te sed tollit tamquam invenire. Ad quo nihil virtute ancillae, pri ad idque singulis, iuvaret molestie dissentias ut cum.</p>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/jquery-mTab-min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(e) {
+    $('.tabbing').mTab({
+		 navigation: ".tabNav"
+		,container: ".tabContainer"
+		,activeTab: 1
+		,activeClass: "active"
+		,scrollOffset: true
+		,accordScreen: 768
+		,toggleClose: true
+		,animation: false
+		,openWithUrl: true
+		,callbackonclick:  function() {  }
+		,callback: function() {  }
+	});
+	
+});
+
+</script>
+</body>
+</html>
